@@ -1,3 +1,80 @@
-h1 {
-  color: red;
+body {
+  background-image: url("img/stars.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1.2rem;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+
+#weather-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#search {
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  outline: none;
+}
+
+#search::placeholder {
+  color: #fff;
+}
+
+.error-message {
+  margin-right: 1.6rem;
+  margin-top: 0.2rem;
+  font-size: 1rem;
+  color: rgb(255, 0, 0);
+}
+
+.main-container {
+  height: 100%;
+  position: relative;
+}
+
+.weather-section {
+  position: absolute;
+  left: 10%;
+  top: 20%;
+  color: #fff;
+}
+
+.condition {
+  font-size: 1.2rem;
+}
+
+.city {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.weather-general--container {
+  display: flex;
+  gap: 2.6rem;
+  align-items: center;
+}
+
+.weather-general--container > h1 {
+  margin: 0;
+  font-size: 6rem;
+  border-right: 2px solid #ffffff81;
+  padding-right: 2rem;
+}
+
+.weather-info--container > h3 {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 300;
 }
