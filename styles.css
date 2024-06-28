@@ -78,3 +78,20 @@ body {
   font-size: 1.1rem;
   font-weight: 300;
 }
+
+.toggle-temperature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toggle-temperature > h4 {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.fa-toggle-on,
+.fa-toggle-off {
+  font-size: 1.6rem;
+  cursor: pointer;
+}
