@@ -1,13 +1,16 @@
 const errorSpan = document.querySelector(".error-message");
 let filteredWeatherData = null;
 
-async function fetchWeather(city) {
+async function fetchWeather(city, lat = null, lng = null) {
   try {
     errorSpan.innerHTML = "";
+    let query = city ? city : "zugdidi";
+    if (lat !== null && lng !== null) {
+      query = `${lat},${lng}`;
+    }
+
     const response = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=772983b77eef43edb39103859242706&q=${
-        city ? city : "tbilisi"
-      }`
+      `https://api.weatherapi.com/v1/current.json?key=772983b77eef43edb39103859242706&q=${query}`
     );
     const weatherData = await response.json();
     filteredWeatherData = filterWeather(weatherData);
@@ -44,7 +47,6 @@ function filterWeather({ current, location }) {
     locationCountry,
   };
 }
-fetchWeather();
 
 document.querySelector("#weather-form").addEventListener("submit", (e) => {
   e.preventDefault();
@@ -103,3 +105,12 @@ function toggleTemperature() {
 
 const toggleButton = document.querySelector(".toggle-button");
 toggleButton.addEventListener("click", toggleTemperature);
+
+navigator.geolocation.getCurrentPosition(
+  (position) => {
+    fetchWeather(null, position.coords.latitude, position.coords.longitude);
+  },
+  () => {
+    fetchWeather();
+  }
+);
