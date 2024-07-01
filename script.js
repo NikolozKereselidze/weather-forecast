@@ -49,6 +49,7 @@ fetchWeather();
 document.querySelector("#weather-form").addEventListener("submit", (e) => {
   e.preventDefault();
   fetchWeather(e.target.children[1].value);
+  e.target.children[1].value = "";
 });
 
 function displayWeather(filteredWeatherData) {
