@@ -81,11 +81,12 @@ function displayWeather(filteredWeatherData) {
   if (toggleButton.classList.contains("fa-toggle-off")) {
     tempEl.innerHTML = `${Math.round(temp_c)}&deg;C `;
     feelsEl.innerHTML = `Feels Like: ${feelslike_c}&deg;C`;
+    windEl.innerHTML = `Wind: ${wind} KPH`;
   } else if (toggleButton.classList.contains("fa-toggle-on")) {
     tempEl.innerHTML = `${Math.round(temp_f)}&deg;F `;
     feelsEl.innerHTML = `Feels Like: ${feelslike_f}&deg;F`;
+    windEl.innerHTML = `Wind: ${wind} MPH`;
   }
-  windEl.innerHTML = `Wind: ${wind} KPH`;
   humidityEl.innerHTML = `Humidity: ${humidity}%`;
 }
 
