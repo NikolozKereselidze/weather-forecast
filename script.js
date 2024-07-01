@@ -4,7 +4,7 @@ let filteredWeatherData = null;
 async function fetchWeather(city, lat = null, lng = null) {
   try {
     errorSpan.innerHTML = "";
-    let query = city ? city : "zugdidi";
+    let query = city ? city : "tbilisi";
     if (lat !== null && lng !== null) {
       query = `${lat},${lng}`;
     }
